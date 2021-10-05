@@ -5,44 +5,83 @@
 	<title>Tao Form</title>
   <link rel="stylesheet" type="text/css" href="Font.css">
 </head>
-<body>
-	  <fieldset>
-	  	 <legend></legend>
-<h2 style="color:white; background-color: orange;"><center>SỞ THÍCH CỦA BẠN</center></h2>
-<p style="color: blue;"> Họ và Tên <input type = "text" name="yourname"  size="20"/></p>	
-<p style="color: blue;">Email<input type = "text" name="email" size="15"/></p>
-<form action="/action_page.php">
-  <p style="color: blue;">Sở thích:
-    <label style="color: orange;"><input name="hobby" value="sport" type="checkbox"/>Thể thao</label> 
-    <label style="color: orange;"><input name="hobby" value="music" type="checkbox"/>Âm nhạc</label> 
-    <label style="color: orange;"><input name="hobby" value="book" type="checkbox"/>Đọc sách</label> </p>
-    <label style="color: orange;"><input name="hobby" value="Websurfing" type="checkbox"/>Lướt web</label> 
-    <label style="color: orange;"><input name="hobby" value="game" type="checkbox"/>Chơi game</label> 
-    <label style="color: orange;"><input name="hobby" value="film" type="checkbox"/>Điện ảnh</label> <br/>
-    <label style="color: orange;" ><input name="hobby" value="travel" type="checkbox"/>Du lịch</label> <br/>
-      <input type="submit" value="Gửi thông báo"/>
-      <input type="reset" value="Nhập lại"/>
+<body style="background-color: skyblue;">
+<table style="padding: 20px; background-color:white;">
+  <form action="/action_page.php">
+  <tr>
+    <th colspan="4"><h2 style="color:white; background-color: red; style=text-align: right;" ><center>SỞ THÍCH CỦA BẠN</center></h2></th>
+  </tr>
+  <th><p style="color: blue; style=text-align: right;"> Họ và Tên </p></th> 
+    <th><input type = "text" name="yourname"  size="20"/></th> 
+  </tr>
+  <tr>
+<th><p style="color: blue;style=text-align: right;">Email</p></th>
+<th><input type = "text" name="email" size="20"/></th>
+</tr>
+ <tr> 
+  <th> <p style="color: blue;style=text-align: right;">Sở thích: </p> </th>
+    <tr>
+    <th> <label style="color: orange;"><input name="hobby" value="sport" type="checkbox"/>Thể thao</label> </th>
+    <th><label style="color: orange;"><input name="hobby" value="music" type="checkbox"/>Âm nhạc</label> </th>
+    <th><label style="color: orange;"><input name="hobby" value="book" type="checkbox"/>Đọc sách</label> </th>
+  </tr>
+<tr> 
+<th> </th>
+<th><label style="color: orange;"><input name="hobby" value="Websurfing" type="checkbox"/>Lướt web</label> </th>
+  <th>  <label style="color: orange;"><input name="hobby" value="game" type="checkbox"/>Chơi game</label> </th>
+   <th> <label style="color: orange;"><input name="hobby" value="film" type="checkbox"/>Điện ảnh</label></th>
+  </tr>
+  <tr>
+    <th></th>
+      <th><label style="color: orange;" ><input name="hobby" value="travel" type="checkbox"/>Du lịch</label> </th>
+      <th></th>
+      <th></th>
+</tr>
+  <tr>
+    <th></th>
+     <th> <input type="submit" value="Gửi thông tin"/> </th>
+      <th><input type="reset" value="Nhập lại"/></th>
+              </tr>
+</table>
 </form>
-</fieldset>
-
-<fieldset>
-  <legend></legend>
-  <h2 style="color: blue;background-color: skyblue;">ĐĂNG KÝ HỌC VIÊN</h2>
-  <p style="color: blue;"> Họ và Tên <input type = "text" name="yourname"  size="20"/></p>  
-  <p style="color: blue;">Ngày sinh<input type = "text" name='birthday' size="15"/></p>
-    <p style="color: blue;">Giới tính:
-   <label ><input name="Gender" value="Male" type="Radio"/>Nam</label>
-   <label ><input name="Gender" value="Female" type="Radio"/>Nữ</label> </p>
-<p style="color: blue;"> Địa chỉ <input type = "text" name="Adress"  size="200"/></p>  
-<p style="color: blue;"> Lớp 
-<select name="Lớp"> </p>
-  <option value="Class"> Chọn lớp</option>
-  <option value="10">10</option>
-  <option value="11">11</option>
-  <option value="12">12</option>
-</select>
-<p style="color: blue;">Email<input type = "text" name="email" size="15"/></p>
-<p style="color: blue;">Điện thoại<input type = "text" name="phone" size="15"/></p>
-</fieldset>
+<table  style="padding: 80px; background-color:white;">
+  <tr>
+  <th colspan="4"><h2 style="color: blue;background-color: skyblue;">ĐĂNG KÝ HỌC VIÊN</h2></th>
+  </tr>
+  <tr>
+ <th><p style="color: blue;"> Họ và Tên</p></th>
+ <th><input type = "text" name="yourname"  size="20"/></p> </th>
+</tr>
+ <tr>
+  <th><p style="color: blue;"> Ngày sinh</p></th>
+  <th><input type = "text" name='birthday' size="20"/></th>
+</tr>
+<tr>
+    <th><p style="color: blue;">Giới tính:</p></th>
+   <th><label ><input name="Gender" value="Male" type="Radio"/>Nam</label>
+   <label ><input name="Gender" value="Female" type="Radio"/>Nữ</label></th>
+</tr>
+<tr>
+<th><p style="color: blue;"> Địa chỉ </p></th>
+<th><input type = "text" name="Adress"  size="20"/></p> </th>
+</tr>
+<tr>
+<th><p style="color: blue;">Lớp</p></th>
+<th><select name="Lớp">
+<option value="Class"> Chọn lớp</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select></th>
+</tr>
+<tr>
+<th><p style="color: blue;">Email</p></th>
+<th><input type = "text" name="email" size="15"/></th>
+</tr>
+<tr>
+<th><p style="color: blue;">Điện thoại</p></th>
+<th><input type = "text" name="phone" size="15"/></th>
+</tr>
+</table>
 </body>
 </html>
