@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+    <script>
+        let inputdiemly;
+        let inputdiemhoa;
+        let inputdiemsinh;
+        inputdiemly = prompt("Nhập điểm Vật lý");
+        inputdiemhoa = prompt("Nhập điểm Hóa học");
+        inputdiemsinh = prompt("Nhập điểm Sinh học");
+        let diemly = parseInt(inputdiemly);
+        let diemhoa = parseInt(inputdiemhoa);
+        let diemsinh = parseInt(inputdiemsinh);
+        let diemtrungbinh = (diemly+diemhoa+diemsinh)/3;
+        document.write("Điểm trung bình là:" +diemtrungbinh);
+
+    </script>
+
+</body>
+</html>
