@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi tien te</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type = "text" id="Amount" size="10"/></td>
+            <td>
+                <select>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="America">America</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="Convert()"> Convert </button>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="Result">Result=0</p>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function Convert(){
+            let Tien = +document.getElementById("Amount").value;
+            let Result = Tien*22.763;
+            document.getElementById("Result").innerHTML = ("Result= "+Result);
+        }
+    </script>
+
+</body>
+</html>
