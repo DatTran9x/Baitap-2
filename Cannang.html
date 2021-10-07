@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so</title>
+</head>
+<body>
+Chiều cao(m)<input type="text" id="Chieucao" size="15"><br>
+Cân nặng(kg)<input type="text" id="Cannang" size="15">
+<input type="submit" value="Tính" onclick="funtion1()">
+<script>
+    function funtion1() {
+        let Chieucao = +document.getElementById("Chieucao").value;
+        let Cannang = +document.getElementById("Cannang").value;
+        let bmi = Cannang / (Chieucao * Chieucao);
+        if (bmi < 18)
+            document.write("Underweight");
+        else if (bmi < 25.0)
+            document.write("Normal");
+        else if (bmi < 30.0)
+            document.write("Overweight");
+        else
+            document.write("Obese");
+    }
+</script>
+</body>
+</html>
