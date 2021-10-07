@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>TInhthang</title>
 </head>
 <body>
-$END$
+<input type="text" id="Thang" value="" size="10">
+<input type="button" value="Tính số ngày" onclick="function1()">
+<p id="Result">Tháng có: </p>
+<script>
+    function function1() {
+        let thang = +document.getElementById("Thang").value;
+        console.log(thang)
+        switch (thang) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("Result").innerHTML = ("Tháng " + thang + " có 31 ngày");
+                break;
+            case 2:
+                document.getElementById("Result").innerHTML = ("Tháng có 28 hoặc 29 ngày");
+                break;
+            default:
+                document.getElementById("Result").innerHTML = ("Tháng " + thang +" có 30 ngày");
+                break;
+        }
+
+    }
+</script>
+
 </body>
 </html>
