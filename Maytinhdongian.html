@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh don gian</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="4"><input type="text" id="result"></th>
+    </tr>
+    <tr>
+        <th><input type="button" value="1" onclick="Add(this.value)"></th>
+        <th><input type="button" value="2" onclick="Add(this.value)"></th>
+        <th><input type="button" value="3" onclick="Add(this.value)"></th>
+        <th><input type="button" value="+" onclick="Add(this.value)"></th>
+    </tr>
+    <tr>
+        <th><input type="button" value="4" onclick="Add(this.value)"></th>
+        <th><input type="button" value="5" onclick="Add(this.value)"></th>
+        <th><input type="button" value="6" onclick="Add(this.value)"></th>
+        <th><input type="button" value="-" onclick="Add(this.value)"></th>
+    </tr>
+    <tr>
+        <th><input type="button" value="7" onclick="Add(this.value)"></th>
+        <th><input type="button" value="8" onclick="Add(this.value)"></th>
+        <th><input type="button" value="9" onclick="Add(this.value)"></th>
+        <th><input type="button" value="*" onclick="Add(this.value)"></th>
+    </tr>
+    <tr>
+        <th><input type="reset" value="C" onclick="Add(this.value)"></th>
+        <th><input type="button" value="0"  onclick="Add(this.value)"></th>
+        <th><input type="submit" value="=" onclick="Answer()"></th>
+        <th><input type="button" value="/"  onclick="Add(this.value)"></th>
+    </tr>
+</table>
+<script>
+   function Add(number){
+       document.getElementById("result").value = document.getElementById("result").value + number
+   }
+   function Answer(){
+       let result = document.getElementById("result").value;
+       document.getElementById("result").value = eval(result);
+   }
+</script>
+
+</body>
+</html>
