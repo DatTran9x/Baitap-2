@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xep hang hoc luc</title>
+</head>
+<body>
+<div>
+    <label>Điểm kiểm tra</label>
+    <input type="text" size="10" id="Diemkiemtra"><br>
+    <label>Điểm thi giữa kỳ</label>
+    <input type="text" size="10" id="Diemthigiuaky"><br>
+    <label>Điểm thi cuối kỳ</label>
+    <input type="text" size="10" id="Diemthicuoiky"><br>
+    <input type="button" id="Tinh" value="Tính" onclick="Tinh()">
+    <script>
+        function Tinh() {
+            let a = +document.getElementById('Diemkiemtra').value;
+            let b = +document.getElementById('Diemthigiuaky').value;
+            let c = +document.getElementById('Diemthicuoiky').value;
+            let d = (a+b+c)/3;
+            if (d>8) {
+                alert('Học sinh giỏi');
+            } else {
+                if (d>6) {
+                    alert('Họ sinh khá');
+                } else {
+                    if (d>4) {
+                        alert('Học sinh trung bình');
+                    } else {
+                        alert('Học sinh yếu');
+                    }
+                }
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện</title>
+</head>
+<body>
+    <div>
+        <label>Nhập số 1</label>
+        <input type="text" id="a" size="10"><br>
+        <label>Nhập số 2</label>
+        <input type="text" id="b" size="10"><br>
+        <label>Nhập số 3</label>
+        <input type="text" id="c" size="10"><br>
+        <input type="button" onclick="Tinh()" value="Tính">
+            <script>
+                function Tinh(){
+                    let a = +document.getElementById('a').value;
+                    let b = +document.getElementById('b').value;
+                    let c = +document.getElementById('c').value;
+                    if(a>b){
+                        if(a>c){
+                        alert(a+ ' là số lớn nhất');
+                        }
+                    } else {
+                        if (b>c){
+                            alert(b+ ' là số lớn nhất');
+                        } else {
+                            alert(c+' là số lớn nhất');
+                        }
+                    }
+                }
+            </script>
+
+    </div>
+
+</body>
+</html>

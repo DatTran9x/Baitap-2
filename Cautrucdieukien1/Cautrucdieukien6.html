@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh hoa hong</title>
+</head>
+<body>
+    <div>
+        <p>Doanh số:</p>
+        <input type="text" id="Doanhso" size="10">
+        <input type="button" onclick="Tinhdoanhso()" value="Tính hoa hồng">
+        <script>
+            function Tinhdoanhso(){
+                let Doanhso = +document.getElementById('Doanhso').value;
+                if (Doanhso<5000) {
+                    alert('Hoa hồng là 5%');
+                } else {
+                    if (Doanhso<10000) {
+                        alert('Hoa hồng là 10%');
+                    } else {
+                        if (Doanhso>15000) {
+                            alert('Hoa hồng là 15%');
+                        }
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

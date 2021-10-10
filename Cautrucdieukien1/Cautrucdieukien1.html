@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 1</title>
+</head>
+<body>
+<div>
+    <h2>Bài 1</h2>
+    <label for="SoA">Số a</label>
+    <input type="text" id="SoA" size="10" name="SoA"><br>
+    <label for="SoB">Số b</label>
+    <input type="text" id="SoB" size="10" name="SoB"><br>
+    <button onclick="Chiahet()">Check</button>
+    <script>
+      function Chiahet() {
+            let a = +document.getElementById('SoA').value;
+            let b = +document.getElementById('SoB').value;
+            if (a % b === 0) {
+                alert('a chia hết cho b');
+            } else {
+                alert('a không chia hết cho b');
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

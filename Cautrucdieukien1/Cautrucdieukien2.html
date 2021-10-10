@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 2</title>
+</head>
+<body>
+    <div>
+        <label>Nhập số tuổi</label><br>
+        <input type="text" id="tuoi" size="10"><br>
+        <input type="button" onclick="Tinhtuoi()" value="Nhập">
+        <script>
+            function Tinhtuoi() {
+                let tuoi = +document.getElementById('tuoi').value;
+                if (tuoi < 16) {
+                    alert('Không đủ tuổi vào lớp 10')
+                } else {
+                    alert('Đủ tuổi vào lớp 10')
+                }
+            }
+        </script>
+    </div>
+
+</body>
+</html>

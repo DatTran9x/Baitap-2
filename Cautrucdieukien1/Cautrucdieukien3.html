@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien</title>
+</head>
+<body>
+    <div>
+        <label>Nhập số</label><br>
+        <input type="text" size="10" id="so"><br>
+        <input type="button" value="Nhập" onclick="Tinh()">
+        <script>
+            function Tinh() {
+                let so = +document.getElementById('so').value;
+                if (so < 0) {
+                    alert('Số này nhỏ hơn 0')
+                } else {
+                    alert('Số này lớn hơn 0')
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
