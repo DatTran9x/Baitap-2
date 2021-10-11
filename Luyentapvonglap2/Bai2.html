@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bai 2</title>
 </head>
 <body>
-
+<script>
+    let number = +prompt('Nhập một số nguyên dương');
+    let result = 0;
+    if (number<0){
+        document.write('Không có giai thừa của số nguyên âm');
+    } else {
+        if (number==0){
+            document.write('Giai thừa là 1');
+        } else {
+            for(let i=1;i <= number;i++){
+                result = result +  i;
+                console.log(result);
+            }
+        }
+    }
+    document.write('Giai thừa của số là: ' + result);
+</script>
 </body>
 </html>

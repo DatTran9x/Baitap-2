@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
 </head>
 <body>
-$END$
+<script>
+    for (a=0;a<5;a++){
+        for(b=0;b<=a;b++){
+            document.write('*');
+        }
+        document.write("<br/>");
+    }
+    for (a=5;a>0;a--){
+        for(b=0;b<a;b++){
+            document.write('*');
+        }
+        document.write("<br/>");
+    }
+    for(a=1; a<=5 ;a++) {
+        for (b = 1; b <= 5; b++) {
+            if (b <= 5 - a) {
+                document.write("&nbsp &nbsp");
+            } else {
+                document.write(" * ");
+            }
+        }
+        document.write("<br/>")
+    }
+    for(a=5 ; a>=0 ; a--) {
+        for (b = 1; b <= 5; b++) {
+            if (b <= 5 - a) {
+                document.write("&nbsp &nbsp" + "");
+            } else {
+                document.write(" * ");
+            }
+        }
+        document.writeln("<br/>")
+    }
+
+</script>
 </body>
 </html>
