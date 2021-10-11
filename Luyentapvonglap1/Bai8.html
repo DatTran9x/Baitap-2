@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<body>
+<input type="button" value="Play" onclick="Playgame()" >
+<script>
+ function Playgame() {
+     let a = +prompt('Số dự đoán bé nhất:');
+     let b = +prompt('Số dự đoán lớn nhất:');
+     let c = Math.floor(Math.random() * b) + a;
+     console.log(c);
+     for (let i = 0; i<3; i++){
+         let d = +prompt('Số bạn đoán là:');
+         if (d != c) {
+             alert('Bạn đã đoán sai');
+         } else {
+             alert('Bạn đã đoán đúng');
+             break;
+         }
+     }
+ }
+</script>
+</body>
+</html>
