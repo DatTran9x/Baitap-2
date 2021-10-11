@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 12</title>
+</head>
+<body>
+<script>
+    let money = +prompt("Số tiền vay là (Triệu):");
+    let month = +prompt("Số tháng vay là (Tháng):");
+    let percent = +prompt('Lãi xuất vay là (%):');
+    percent *= 0.01
+    let result = money;
+    for (let N=1; N<=month; N++){
+        result = result * (1+percent);
+    }
+    document.write('Số tiền phải trả là (Triệu): '+result);
+</script>
+</body>
+</html>

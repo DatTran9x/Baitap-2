@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 11</title>
+</head>
+<body>
+<label for="Luong">Lương(triệu)</label>
+<input type="number" id="Luong">
+<input type="button" onclick="Tinhthue()" value="Tính thuế">
+<script>
+    function Tinhthue(){
+        let Thuesuat = 0;
+        let Thue = 0;
+        let Luong = +document.getElementById('Luong').value;
+        if (Luong < 10) {
+        Thuesuat = 0.05;
+            Thue = Luong * Thuesuat;
+            document.write(Thue);
+        } else {
+                Thuesuat = 0.1;
+                Thue = Luong * Thuesuat;
+                document.write(Thue);
+        }
+    }
+</script>
+</body>
+</html>

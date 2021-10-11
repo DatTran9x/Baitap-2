@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Nhập chiều dài cạnh a: ');
+    let b = +prompt('Nhập chiều dài cạnh b: ');
+    let c = +prompt('Nhập chiều dài cạnh c: ');
+    if (a,b,c <0) {
+        document.write('Đây không phải là tam giác');
+    } else {
+        if (a+b<c) {
+            document.write('Đây không phải là tam giác');
+        } else {
+            if (a+c<b){
+                document.write('Đây không phải là tam giác');
+            } else {
+                if (b+c<a){
+                    document.write('Đây không phải là tam giác');
+                } else {
+                    document.write('Đây là tam giác');
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

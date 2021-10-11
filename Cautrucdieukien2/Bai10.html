@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+<DIV>
+    <p>Nhập số điện gọi:</p>
+    <input type="text" id="Sodien" size="10">
+    <input type="button" onclick="Tinhtien()" value="Tính tiền">
+</DIV>
+<div>
+    <script>
+        function Tinhtien(){
+            let Sodien = +document.getElementById('Sodien').value;
+            if (Sodien<2000) {
+                let Tien = Sodien * 500;
+                alert('Số tiền là: ' + Tien);
+            } else  {
+                let Tien = (Sodien-2000)*700 + 180*500;
+                alert('Số tiền là  :' + Tien);
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

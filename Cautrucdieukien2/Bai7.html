@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+  <script>
+      let a = +prompt('Tham số a là: ');
+      let b = +prompt('Tham số b là: ');
+      let c = +prompt('Tham số c là: ');
+      let d = b*b - 4*a*c;
+      if (d<0){
+          document.write('Phương trình vô nghiệm');
+      } else {
+          if (d==0){
+              let e = -b/2*a
+              document.write('Phương trình có nghiệm kép là: ' + e);
+          } else {
+              let f = (-b+Math.sqrt(d))/2*a;
+              let g = (-b-Math.sqrt(d))/2*a;
+              document.write('Phương trình có nghiệm 1 là: ' + f + "<br>");
+              document.write('Phương trình có nghiệm 2 là: ' + g);
+          }
+      }
+  </script>
+</body>
+</html>
