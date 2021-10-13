@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap </title>
+</head>
+<body>
+<script>
+    let a = prompt("nhap a");
+    let check = !isNaN(parseFloat(a)) && isFinite(a);
+    if (check === true) {
+        a = parseInt(a);
+        if (a % 5 === 0 && a % 9 === 0) {
+            alert('Số a chia hết cho 5 và 9');
+        } else {
+            alert('Số a không chia hết cho 5 và 9');
+        }
+    } else {
+        if (a === 'hello') {
+            alert('True');
+        } else {
+            alert('False');
+        }
+    }add_element_to_array()
+</script>
+</body>
+</html>

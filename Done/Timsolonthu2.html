@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so lon thu 2</title>
+</head>
+<body>
+<div>
+    <label for="a">Nhập số a</label>
+    <input type="text" id="a" size="10"><br>
+    <label for="b">Nhập số b</label>
+    <input type="text" id="b" size="10"><br>
+    <label for="c">Nhập số c</label>
+    <input type="text" id="c" size="10"><br>
+    <input type="button" value="Tính số lớn nhất" onclick="Tinh()"><br>
+</div>
+<div>
+    <script>
+        function Tinh() {
+            let a = +document.getElementById('a').value;
+            let b = +document.getElementById('b').value;
+            let c = +document.getElementById('c').value;
+            if (a >= b && a >= c) {
+                if (a == b || a == c) {
+                    if (b > c) {
+                        document.write(c + 'là số lớn thứ 2');
+                    } else {
+                        document.write(b + "là số lớn thứ 2");
+                    }
+                } else {
+                    if (b >= c) {
+                        document.write(b + ' là số lớn thứ 2');
+                    } else {
+                        document.write(c + ' là số lớn thứ 2');
+                    }
+                }
+            } else {
+                if (a <= b && a <= c) {
+                    if (b == c) {
+                        document.write(a + ' là số lớn thứ 2');
+                    } else {
+                        if (b > c) {
+                            document.write(c + ' là số lớn thứ 2');
+                        } else {
+                            document.write(b + ' là số lớn thứ 2');
+                        }
+                    }
+                } else {
+                    if (a == b || a == c) {
+                        if (b > c) {
+                            document.write(c + 'là số lớn thứ 2');
+                        } else {
+                            document.write(b + "là số lớn thứ 2");
+                        }
+                    } else {
+                        document.write(a + ' là số lớn thứ 2');
+                    }
+                }
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
