@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<p>Nhập hello,world, music</p>
+<script>
+    let str = prompt('Nhập từ bạn muốn dịch: ');
+    english = ["hello", "world", "music"];
+    vietnamese = ["Xin chào", "Thế giới", "Âm nhạc"];
+    let result = [];
+    for (let x = 0; x < english.length; x++) {
+        if (str == english[x]) {
+            result.push(vietnamese[x]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>
