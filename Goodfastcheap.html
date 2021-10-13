@@ -6,21 +6,25 @@
 </head>
 <body>
 <h1>What do you want?</h1>
-<input type="checkbox" value="1" id="good">Good <br>
-<input type="checkbox" value="1" id="fast">Fast<br>
-<input type="checkbox" value="1" id="cheap">Cheap<br>
-<input type="submit" value="Make it" onclick="submit()">
+<input type="checkbox" value="good" id="good" onclick="function1(this.value)">Good <br>
+<input type="checkbox" value="fast" id="fast" onclick="function1(this.value)">Fast<br>
+<input type="checkbox" value="cheap" id="cheap" onclick="function1(this.value)">Cheap<br>
 <script>
- let a = +document.getElementById("good").value;
- let b = +document.getElementById("fast").value;
- let c = +document.getElementById("cheap").value;
- function submit() {
-     if (a + b + c === 3) {
-         alert ("There no such thing like that");
-     } else {
-         alert ("I think we can do it");
-     }
- }
+    function function1(value) {
+        if (value == 'good') {
+            if (fast.checked && cheap.checked) {
+                cheap.checked = false;
+            }
+        } else if (value == 'cheap') {
+            if (good.checked && fast.checked) {
+                fast.checked = false;
+            }
+        } else {
+            if (good.checked && cheap.checked) {
+                good.checked = false;
+            }
+        }
+    }
 </script>
 </body>
 </html>

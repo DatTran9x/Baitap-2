@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Type anything slowly</h2>
+<form name="f">
+    <textarea type="text" cols="40" rows="10" name="text" onkeydown="typethis()"></textarea>
+</form>
+<script>
+    let t, j;
+    let n = "";
+    let newtext = ['C', 'R', 'U', 'S', 'H', ' ', 'K', 'H', 'Ô', 'N', 'G', ' ', 'T', 'H', 'Í', 'C', 'H',' ', 'B', 'Ạ', 'N','!'];
+
+    function typethis() {
+        t = document.f.text.value;
+        j = t.length;
+        if (j > 0) {
+            for (let i = 0; i < j; i++) {
+                console.log(i);
+                n = n + newtext[i];
+                if (i == 22) {
+                    document.f.text.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.f.text.value = n;
+        n = "";
+        setTimeout("typethis()", 1);
+    }
+</script>
+</body>
+</html>

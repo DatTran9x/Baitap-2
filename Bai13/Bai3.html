@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Co caro</title>
+    <script src="Caro.js"></script>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame"/>
+<input onclick="changeValue1()" type="button" value="Player">
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    let turn = 0;
+    for (let i = 0; i < 3; i++) {
+        board[i] = new Array('&#46', '&#46', '&#46', '&#46', '&#46');
+    }
+    for (let i = 0; i < 3; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 3; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Player' onclick='changeValue1()'>"
+    b.innerHTML = data;
+
+    function changeValue1() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        if (turn % 2 == 0) {
+            board[positionX][positionY] = "x";
+        } else {
+            board[positionX][positionY] = "0";
+        }
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        turn++;
+        data += "<br/><br/><input type='button' value='Player' onclick='changeValue1()'>"
+        b.innerHTML = "<hr/>" + data;
+    }
+
+    if (isWin) {
+        alert("you win ");
+    } else {
+        if (turn = 9) {
+            alert("draw")
+        }
+    }
+
+</script>
+</body>
+</html>
+
