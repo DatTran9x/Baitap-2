@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xoa V</title>
+</head>
+<body>
+<script>
+    let result, b, V;
+    let a = [];
+    a[0] = +prompt('Nhập số đầu tiên');
+    a[1] = +prompt('Nhập số đầu thứ 2');
+    a[2] = +prompt('Nhập số đầu thứ 3');
+    a[3] = +prompt('Nhập số đầu thứ 4');
+    a[4] = +prompt('Nhập số đầu thứ 5');
+    a[5] = +prompt('Nhập số đầu thứ 6');
+    a[6] = +prompt('Nhập số đầu thứ 7');
+    a[7] = +prompt('Nhập số đầu thứ 8');
+    a[8] = +prompt('Nhập số đầu thứ 9');
+    a[9] = +prompt('Nhập số đầu thứ 10');
+    V = +prompt('Nhập số V');
+    document.write(a + '<br>');
+    for (let i = 0; i < a.length; i++) {
+        if (V == a[i]) {
+            if (i < (a.length-1)) {
+                a[i] = a[i + 1];
+                let n = i + 1;
+                if (n < a.length) {
+                    for (n; n < a.length; n++) {
+                        a[n - 1] = a[n];
+                        a.push('0');
+                    }
+                }
+            } else {
+                a[i] = 0;
+            }
+        }
+    }
+    document.write(a);
+</script>
+</body>
+</html>

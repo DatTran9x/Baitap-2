@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao nguoc</title>
+</head>
+<body>
+<script>
+    let b, a = [];
+    while (true) {
+        let b = +prompt('Nhập một số (không nhập để ngừng) :');
+        if (b == '') {
+            check = false;
+            break;
+        }
+        a.push(b);
+    }
+    document.write('Dãy số là :' + a + '<br>');
+    let first = 0;
+    let last = a.length - 1;
+    while (first < last) {
+        let c = a[first];
+        a[first] = a[last];
+        a[last] = c;
+        first++;
+        last--;
+    }
+    document.write('Dãy mới là :' + a);
+</script>
+</body>
+</html>

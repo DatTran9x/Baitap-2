@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so V</title>
+</head>
+<body>
+<script>
+    let result, b, V;
+    let a = [];
+    a[0] = +prompt('Nhập số đầu tiên');
+    a[1] = +prompt('Nhập số đầu thứ 2');
+    a[2] = +prompt('Nhập số đầu thứ 3');
+    a[3] = +prompt('Nhập số đầu thứ 4');
+    a[4] = +prompt('Nhập số đầu thứ 5');
+    a[5] = +prompt('Nhập số đầu thứ 6');
+    a[6] = +prompt('Nhập số đầu thứ 7');
+    a[7] = +prompt('Nhập số đầu thứ 8');
+    a[8] = +prompt('Nhập số đầu thứ 9');
+    a[9] = +prompt('Nhập số đầu thứ 10');
+    V = +prompt('Nhập số V');
+    for (let i = 0; i < a.length; i++) {
+        if (V == a[i]) {
+            document.write('V is in the array');
+            break;
+        }
+        if (i == (a.length - 1)) {
+            document.write('V is not in the array');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So lon nhat va gia tri trung binh</title>
+</head>
+<body>
+<script>
+    let b, c, a = [];
+    while (true) {
+        let b = +prompt('Nhập một số (không nhập để ngừng) :');
+        if (b == '') {
+            check = false;
+            break;
+        }
+        a.push(b);
+    }
+    document.write('Dãy số là :' + a + '<br>');
+    b = a[0];
+    c = a[0];
+    for (let i = 1; i < a.length; i++) {
+        if (b <= a[i]) {
+            b = a[i];
+            result = 'Số lớn nhất là ' + b;
+        }
+        c += a[i];
+    }
+    document.write(result + '<br>');
+    c /= a.length;
+    document.write('Trung bình của các phần tử trong mảng là :' + c);
+</script>
+</body>
+</html>

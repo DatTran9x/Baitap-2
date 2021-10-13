@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So am</title>
+</head>
+<body>
+<script>
+    let b, a = [],c = [];
+    while (true) {
+        let b = +prompt('Nhập một số (không nhập để ngừng) :');
+        if (b == '') {
+            check = false;
+            break;
+        }
+        a.push(b);
+    }
+    document.write('Dãy số là :' + a + '<br>');
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] < 0) {
+            c.push(a[i])
+        }
+    }
+    document.write('Các số âm là :' + c);
+</script>
+</body>
+</html>
