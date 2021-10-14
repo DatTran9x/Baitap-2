@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra chuoi</title>
+</head>
+<body>
+<script>
+    let check;
+    let soPhanTu = +prompt(" Nhập số phần tử mảng: ");
+    let a = new Array(soPhanTu);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = Math.round(Math.random() * 100 + 1);
+    }
+    //Tạo giá trị ngẫu nhiên trong mảng
+    soPhanTu =+prompt(" Nhập số phần tử mảng: ");
+    let b = new Array(soPhanTu);
+    for (let i = 0; i < b.length; i++) {
+        b[i] = Math.round(Math.random() * 100 + 1);
+    }
+    document.write(a + '<br>');
+    document.write(b + '<br>');
+    if (a.length == b.length) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] == b[i])
+                check = true;
+            else {
+                check = false;
+                break;
+            }
+        }
+        if (check == true) document.write('2 mảng giống nhau')
+        else document.write('2 mảng khác nhau')
+    } else document.write('2 mảng khác nhau')
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai bao so ki tu</title>
+</head>
+<body>
+<script>
+    let b= 0;
+    let a = ['a', '3', 'b', '4', 'c', '5'];
+    document.write(a+'<br>');
+    for (let i = 0; i < a.length; i++) {
+        let check = !isNaN(parseFloat(a[i])) && isFinite(a[i]);
+        if (check === true) {
+            b++
+    }
+    } document.write('Số kí tự số là '+b);
+</script>
+</body>
+</html>

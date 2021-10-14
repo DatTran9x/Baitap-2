@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thay the</title>
+</head>
+<body>
+<script>
+    let soPhanTu = +prompt(" Nhập số phần tử mảng: ");
+    let a = new Array(soPhanTu);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = prompt('Nhập phần tử của mảng: ')
+    }
+    document.write(a + '<br>');
+    for (let u = 0; u < a.length; u++) {
+        if (a[u] == '-') {
+            a[u] = '_';
+        }
+    }
+    document.write(a);
+</script>
+</body>
+</html>
