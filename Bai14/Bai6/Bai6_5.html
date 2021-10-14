@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chom sao</title>
+</head>
+<body>
+<script>
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let search = prompt('Nhập tên sao cần tìm :');
+    let result = searchstar(search);
+    function searchstar(search){
+        let  result = 'Không có kết quả';
+        for (let i =0;i<star.length;i++){
+            if(search === star[i]){
+                result = 'Sao '+star[i]+' thuộc chòm sao '+constellation[i];
+                break;
+            }
+        }
+        return result;
+    }
+    document.write(result);
+</script>
+</body>
+</html>
