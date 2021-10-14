@@ -1,60 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Co caro</title>
-    <script src="Caro.js"></script>
+    <title>Title</title>
 </head>
 <body>
 <h3>Caro Game Simple</h3>
-<p id="carogame"/>
-<input onclick="changeValue1()" type="button" value="Player">
+<div id="game"></div>
 <script>
-    let b = document.getElementById("carogame");
-    let board = [];
-    let data = "";
-    let turn = 0;
-    for (let i = 0; i < 3; i++) {
-        board[i] = new Array('&#46', '&#46', '&#46', '&#46', '&#46');
-    }
-    for (let i = 0; i < 3; i++) {
-        data += "<br/>";
-        for (let j = 0; j < 3; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;";
+    let gameBoard = "<table style='border: black'>"
+    let board = [["*", "*", "*" ] ,
+        [ "*", "*", "*" ] ,
+        [ "*", "*", "*" ]];
+    let turn =0 ;
+    for (let i=0;i<3;i++){
+        gameBoard += "<tr>"
+        for(let j = 0; j < 3; j++){
+            gameBoard += `<td id='${i}${j}' onclick="play(${i},${j})">${board[i][j]}</td>`;
         }
+        gameBoard += "</tr>"
     }
-    data += "<br/><br/><input type='button' value='Player' onclick='changeValue1()'>"
-    b.innerHTML = data;
-
-    function changeValue1() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        if (turn % 2 == 0) {
-            board[positionX][positionY] = "x";
+    gameBoard += "</table>"
+    game.innerHTML = gameBoard
+    function checkWinColumn() {
+        if (board[0][0] !== "*" && board[0][0] === board[1][0] && board[0][0] === board[2][0]) {
+            return true;
+        } else if (board[0][1] !== "*" && board[0][1] === board[1][1] && board[0][1] === board[2][1]) {
+            return true
+        } else if (board[0][2] !== "*" && board[0][2] === board[1][2] && board[0][2] === board[2][2]) {
+            return true
         } else {
-            board[positionX][positionY] = "0";
+            return false;
         }
-        for (let i = 0; i < 3; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 3; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-            }
+    }
+    function checkWinRow() {
+        if (board[0][0] !== "*" && board[0][0] === board[0][1] && board[0][0] === board[0][2]) {
+            return true;
+        } else if (board[1][0] !== "*" && board[1][1] === board[1][0] && board[1][0] === board[1][2]) {
+            return true
+        } else if (board[2][0] !== "*" && board[2][0] === board[2][1] && board[2][0] === board[2][2]) {
+            return true
+        } else {
+            return false;
+        }
+    }
+    function checkWinSub() {
+        if (board[2][0] !== "*" && board[2][0] === board[1][1] && board[2][0] === board[0][2] || board[0][0] !== "*" && board[0][0] === board[1][1] && board[0][0] === board[2][2]) {
+            return true;
+        }
+        return false;
+    }
+    function play(i,j){
+        let id = i + "" + j
+        let x = "";
+        turn % 2 === 0 ? x = "X" : x = "O";
+        board[i][j] = x;
+        document.getElementById(id).innerHTML = x;
+        let isWin = checkWinColumn() || checkWinRow()  || checkWinSub();
+        if (isWin) {
+            alert(x + " Win ")
         }
         turn++;
-        data += "<br/><br/><input type='button' value='Player' onclick='changeValue1()'>"
-        b.innerHTML = "<hr/>" + data;
     }
-
-    if (isWin) {
-        alert("you win ");
-    } else {
-        if (turn = 9) {
-            alert("draw")
-        }
-    }
-
 </script>
 </body>
 </html>
-
