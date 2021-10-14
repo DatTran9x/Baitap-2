@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra ki tu</title>
+</head>
+<body>
+<script>
+    let soPhanTu = +prompt(" Nhập số phần tử mảng: ");
+    let a = new Array(soPhanTu);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = prompt('Nhập vào ký tự mảng');
+    }
+    let key = prompt('Nhập vào ký tự cần tìm');
+    let result = check(a,key);
+
+    function check(a,key){
+        let count = 0;
+        for (let i =0;i<a.length;i++){
+            if (key === a[i]){
+                count++
+            }
+        }
+        if (count ===0){
+            result = alert('-1');
+        } else {
+            result = alert(count);
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nho nhat</title>
+</head>
+<body>
+<script>
+    let num1 = +prompt('Nhập số thứ nhất :');
+    let num2 = +prompt('Nhập số thứ hai :');
+    let num3 = +prompt('Nhập số thứ ba :');
+    let varr = [num1, num2, num3];
+    document.write(varr+'<br>');
+    let result = comparisons(varr);
+
+    function comparisons(varr) {
+        let min = varr[0];
+        for (let i = 1; i < varr.length; i++) {
+            if (min>varr[i]){
+                min = varr[i];
+            }
+        }
+        result = document.write('Số bé nhất là :'+min);
+        return result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi cho</title>
+</head>
+<body>
+<Script>
+    let num1 = +prompt('Nhập số thứ nhất :');
+    let num2 = +prompt('Nhập số thứ hai :');
+    let result = switchnum(num1, num2);
+
+    function switchnum(num1, num2) {
+        let num3 = num2;
+        num2 = num1;
+        num1 = num3;
+        result = document.write(num1 + ',' + num2);
+        return result
+    }
+</Script>
+</body>
+</html>

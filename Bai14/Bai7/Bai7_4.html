@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let N = prompt('Nhập vào ký tự :');
+    let result = check(N);
+
+    function check(N) {
+        let check = !isNaN(parseFloat(N) && isFinite(N));
+        if (check === true) {
+            result = alert('True');
+        } else {
+            result = alert('False');
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

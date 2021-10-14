@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let soPhanTu = +prompt(" Nhập số phần tử mảng: ");
+    let a = new Array(soPhanTu);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = +prompt('Nhập phần tử');
+    }
+    document.write(a +'<br>');
+    let result = reverse(a);
+    function reverse(a){
+        a.reverse();
+        result = document.write(a);
+        return result;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinh tron</title>
+</head>
+<body>
+<script>
+    let radius = +prompt('Nhập bán kính hình tròn: ');
+    let resultperimeter = perimeter(radius);
+    let resultarea = are(radius);
+
+    function perimeter(radius) {
+        let resultperimeter = radius * 2 * 3.14;
+        return resultperimeter;
+    }
+
+    function are(radius) {
+        let resultarea = radius * radius * 3.14;
+        return resultarea
+    }
+
+    document.write(resultarea+'<br>');
+    document.write(resultperimeter);
+</script>
+</body>
+</html>
