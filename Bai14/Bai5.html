@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi giua foot va meters</title>
+</head>
+<body>
+<form>
+    <p>
+        <label>Foot</label>
+        <input id="inputFoot" type="number" placeholder="Foots"
+               oninput="footToMeter(this.value)"
+               onchange="footToMeter(this.value)">
+    </p>
+    <p>Celsius: <span id="outputMeters"></span></p>
+    <p>
+        <label>Meters</label>
+        <input id="inputMeters" type="number" placeholder="Meters"
+               oninput="meterToFoot(this.value)"
+               onchange="meterToFoot(this.value)">
+    </p>
+    <p>Celsius: <span id="outputFoots"></span></p>
+</form>
+<script>
+    function footToMeter(foot) {
+        foot = parseFloat(foot);
+        document.getElementById("outputMeters").innerHTML = foot * 0.305;
+    }
+
+    function meterToFoot(meter) {
+        meter = parseFloat(meter);
+        document.getElementById("outputFoots").innerHTML = meter * 3.279;
+    }
+</script>
+</body>
+</html>
