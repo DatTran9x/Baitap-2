@@ -18,13 +18,18 @@
             let side1 = document.getElementById("side1").value;
             let side2 = document.getElementById("side2").value;
             let side3 = document.getElementById("side3").value;
+            side1 = parseInt(side1);
+            side2 = parseInt(side2);
+            side3 = parseInt(side3);
             if (side1 < 0 || side2 < 0 || side3 < 0) {
                 document.getElementById("result").innerHTML = 'Đây không phải tam giác';
-            } else {
-                document.getElementById("result").innerHTML = 'Đây là tam giác';
             }
-
-           if()
+            if ((side1 * side1) <= (side2 * side2 + side3 * side3) && (side2 * side2) <= (side1 * side1 + side3 * side3) && (side3 * side3) <= (side1 * side1 + side2 * side2)) {
+                document.getElementById("result").innerHTML = 'Đây là tam giác';
+            } else {
+                document.getElementById("result").innerHTML = 'Đây không phải tam giác';
+            }
+        }
     </script>
 </div>
 </body>
