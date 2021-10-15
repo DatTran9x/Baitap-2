@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra Palindrome</title>
+</head>
+<body>
+<script>
+    let word = prompt('Nhập từ cần kiểm tra :');
+    let result = check(word);
+    function check(word){
+        let mystring = word;
+        let sep = '';
+        let arrayString = mystring.split(sep);
+        console.log(arrayString);
+        for (let i=0; i<arrayString.length;i++){
+            if(arrayString[i]!==arrayString[arrayString.length-i-1]){
+                alert('False');
+                break;
+            }
+            }
+        alert('True');
+        }
+</script>
+</body>
+</html>
