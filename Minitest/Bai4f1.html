@@ -26,10 +26,16 @@
             }
             if ((side1 * side1) <= (side2 * side2 + side3 * side3) && (side2 * side2) <= (side1 * side1 + side3 * side3) && (side3 * side3) <= (side1 * side1 + side2 * side2)) {
                 document.getElementById("result").innerHTML = 'Đây là tam giác';
-            } else {
-                document.getElementById("result").innerHTML = 'Đây không phải tam giác';
-            }
+                if (side1 === side2 || side2 === side3 || side3 === side1) {
+                    document.write('Đây là tam giác cân');
+                }
+
+        else
+        {
+            document.getElementById("result").innerHTML = 'Đây không phải tam giác';
         }
+        }
+            }
     </script>
 </div>
 </body>
