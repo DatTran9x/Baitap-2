@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4a</title>
+</head>
+<body>
+<div>
+    <input type="number" id="length" size="10">
+    <input type="button" onclick="calculate()" value="calculate">
+    <p id="perimeter"></p>
+    <p id="area"></p>
+</div>
+<div>
+    <script>
+        function calculate() {
+            let length = document.getElementById('length').value;
+            let perimeter = length * 4;
+            let area = length * length;
+            document.getElementById('perimeter').innerHTML = 'Chu vi là : ' + perimeter;
+            document.getElementById('area').innerHTML = 'Chiều dài là : ' + area;
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4f1</title>
+</head>
+<body>
+<div>
+    <input type="number" id="side1" size="10"><br>
+    <input type="number" id="side2" size="10"><br>
+    <input type="number" id="side3" size="10"><br>
+    <input type="button" onclick="check()" value="Tính">
+    <h1 id="result"></h1>
+</div>
+<div>
+    <script>
+        function check() {
+            let side1 = document.getElementById("side1").value;
+            let side2 = document.getElementById("side2").value;
+            let side3 = document.getElementById("side3").value;
+            if (side1 < 0 || side2 < 0 || side3 < 0) {
+                document.getElementById("result").innerHTML = 'Đây không phải tam giác';
+            } else {
+                document.getElementById("result").innerHTML = 'Đây là tam giác';
+            }
+
+           if()
+    </script>
+</div>
+</body>
+</html>

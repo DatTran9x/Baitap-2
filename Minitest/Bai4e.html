@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4e</title>
+</head>
+<body>
+<div>
+    <input type="number" id="year" size="10"><br>
+    <input type="button" onclick="month()" value="Tính tháng 2">
+    <p id="result"></p>
+</div>
+<div>
+    <script>
+        function month(){
+            let year = document.getElementById("year").value;
+            if(year%4===0){
+                if(year%100===0){
+                    if(year%400===0){
+                        document.getElementById("result").innerHTML = 'Tháng 2 có 29 ngày';
+                    }
+                    else{
+                        document.getElementById("result").innerHTML = 'Tháng 2 có 28 ngày';
+                    }
+                } else {
+                    document.getElementById("result").innerHTML = 'Tháng 2 có 29 ngày';
+                }
+            } else {
+                document.getElementById("result").innerHTML = 'Tháng 2 có 28 ngày';
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
