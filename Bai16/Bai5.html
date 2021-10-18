@@ -7,8 +7,7 @@
 <body>
 <div>
     <script>
-        function temprature(temp) {
-            this.temp = temp;
+        function Temprature(temp) {
             this.getfara = function () {
                 return temp * 9 / 5 + 32;
             }
@@ -19,7 +18,7 @@
 
         let temp = +prompt('Độ C: ');
         document.write('Độ C:' + temp + '<br>');
-        temp = new temprature(temp);
+        temp = new Temprature(temp);
         let fara = temp.getfara();
         let kevin = temp.getkevin();
         document.write('Độ F:' + fara + '<br>');
