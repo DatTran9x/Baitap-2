@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<div>
+    <script>
+        function temprature(temp) {
+            this.temp = temp;
+            this.getfara = function () {
+                return temp * 9 / 5 + 32;
+            }
+            this.getkevin = function () {
+                return temp + 273;
+            }
+        }
+
+        let temp = +prompt('Độ C: ');
+        document.write('Độ C:' + temp + '<br>');
+        temp = new temprature(temp);
+        let fara = temp.getfara();
+        let kevin = temp.getkevin();
+        document.write('Độ F:' + fara + '<br>');
+        document.write('Độ K:' + kevin);
+
+    </script>
+</div>
+</body>
+</html>
