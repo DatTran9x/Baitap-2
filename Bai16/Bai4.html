@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TiXây dựng lớp mô tả hình chữ nhậttle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<div>
+    <script>
+        function Rectangle(x, y, length, width) {
+            this.length = length;
+            this.width = width;
+            this.x = x;
+            this.y = y;
+        }
+
+        function createRectangle() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let length = Math.floor(Math.random() * 100);
+            let width = Math.floor(Math.random() * length);
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let rectangle = new Rectangle(x, y, length, width);
+            ctx.beginPath();
+            ctx.fillRect(rectangle.x, rectangle.y, rectangle.length, rectangle.width);
+            let area = length * width;
+            let perimeter = (length+width)*2;
+            alert('Chu vi là: '+perimeter+' Diện tích là: '+area);
+
+        }
+
+        createRectangle();
+    </script>
+</div>
+</body>
+</html>
