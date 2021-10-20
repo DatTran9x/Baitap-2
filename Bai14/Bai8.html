@@ -1,10 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Ung dung quan ly</title>
+    <style>
+        .input {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Green */
+        }
+    </style>
 </head>
 <body>
+<form>
+    <input type="text" id="product" size="10">
+    <input type="button" onclick="add()" value="Add">
+    <hr>
+    <br>
+    <input type="text" id="edit1" size="10">
+    <input type="button" onclick="change()" value="change" id="id1">
+    <hr>
+    <br>
+    <table id="board" width="500">
+    </table>
+</form>
+<script>
+    let product = [];
 
+    function board() {
+        let sout = '';
+        for (let i = 0; i < product.length; i++) {
+            sout = sout + "<tr>";
+            sout = sout + "<td colspan='4'>" + product[i] + "</td>";
+            sout = sout + "<td colspan='2'><input type='button' onclick='edit(" + i + ")' value='edit'></td>";
+            sout = sout + "<td colspan='2'><input type='button' onclick='delete1(" + i + ")' value='delete'></td>";
+            sout = sout + "</tr><br>";
+        }
+
+        document.getElementById('board').innerHTML = sout;
+    }
+
+    function add() {
+        let product1 = document.getElementById('product').value;
+        if (product1.trim() === '') {
+            return;
+        }
+        product.push(product1);
+        console.log(product);
+        document.getElementById('product').value = " ";
+        board(product);
+    }
+
+    let index = 0;
+
+    function edit(i) {
+        document.getElementById('edit1').value = product[i];
+        index = i;
+        return index;
+    }
+
+    function change() {
+        let product2 = document.getElementById('edit1').value;
+        product[index] = product2;
+        board(product);
+    }
+
+    function delete1(i) {
+        product.splice(i, 1);
+        board(product);
+    }
+</script>
 </body>
 </html>
