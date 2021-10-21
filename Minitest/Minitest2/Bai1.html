@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let length = +prompt(" Nhập số phần tử mảng: ");
+    let arr = new Array(length);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt('Nhập phần tử');
+    }
+    document.write(arr + '<br>');
+
+    function check(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    let result = check(arr);
+    document.write('Số số chẵn trong mảng là: ' + result);
+</script>
+</body>
+</html>

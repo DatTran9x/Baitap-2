@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let length = +prompt(" Nhập số phần tử mảng: ");
+    let arr = new Array(length);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt('Nhập phần tử');
+    }
+    document.write(arr + '<br>');
+
+    function count(array) {
+        let result = 0;
+        for (let i = 0; i < array.length; i++) {
+            let check = true;
+            if (array[i] < 2) {
+                check = false;
+            } else {
+                for (let j = 2; j <= Math.sqrt(array[i]); j++) {
+                    if (array[i] % j === 0) {
+                        check = false;
+                    }
+                }
+            }
+            console.log(check);
+            if (check === true) {
+                result += array[i];
+                console.log(result);
+            }
+        }
+        return result;
+    }
+
+    result = count(arr);
+    document.write("Tổng các số nguyên tố là :" + result);
+
+</script>
+</body>
+</html>
