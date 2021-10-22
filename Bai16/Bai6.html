@@ -108,14 +108,10 @@
 
                 if (this.getbattery() < 4) {
                     this.setstatus(false);
+                    alert('Please charge!');
                 }
             }
 
-            checkon() {
-                if (this.getbattery() > 0) {
-                    this.setstatus(true);
-                }
-            }
 
             charge() {
                 this.setbattery(this.getbattery() + 5);
