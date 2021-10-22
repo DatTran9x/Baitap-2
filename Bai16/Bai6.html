@@ -9,6 +9,7 @@
     <h2 id="Mobile1">Nokia</h2>
     <p id="Battery1">Battery</p>
     <input type="button" value="Charge" onclick="Charge1()">
+    <input type="button" value="On/Off" onclick="onoff1()">
     <label>Tin nhắn</label><br>
     <input type="text" id="send1"><br>
     <input type="button" value="Send" onclick="send1()"><br>
@@ -22,6 +23,7 @@
     <h2 id="Mobile">Iphone</h2>
     <p id="Battery2">Battery</p>
     <input type="button" value="Charge" onclick="Charge2()">
+    <input type="button" value="On/Off" onclick="onoff2()">
     <label>Tin nhắn</label><br>
     <input type="text" id="send2"><br>
     <input type="button" value="Send" onclick="send2()"><br>
@@ -38,6 +40,16 @@
             send;
             receive;
             sent;
+            status;
+
+            getstatus() {
+                return this.status;
+            }
+
+            setstatus(value) {
+                this.status = value;
+            }
+
 
             getname() {
                 return this.name;
@@ -79,45 +91,52 @@
                 this.sent = value;
             }
 
-            constructor(name, battery, send, receive, sent) {
+            constructor(name, battery, send, receive, sent,status) {
                 this.name = name;
                 this.battery = battery;
                 this.send = send;
                 this.receive = receive;
                 this.sent = sent;
+                this.status=status;
             }
 
-            use(battery) {
-                battery -= 5;
-                return battery;
+            use() {
+                this.setbattery(this.getbattery()-5) ;
             }
 
-            nobattery(battery) {
-                let check;
-                if (battery < 4) {
-                    check = false;
-                    return check;
+            nobattery() {
+
+                if (this.getbattery() < 4) {
+                    this.setstatus(false) ;
                 } else {
-                    check = true;
-                    return check;
+                    this.setstatus(true) ;
                 }
             }
 
-            checkon(battery) {
-                if (battery > 0) {
-                    check = true;
-                    return check;
+            checkon() {
+                if(this.getbattery() > 0) {
+                    this.setstatus(true);
                 }
             }
 
-            charge(battery) {
-                battery += 5;
+            charge() {
+               this.setbattery(this.getbattery()+5);
+            }
+
+            onoff(){
+                if(this.getstatus()===true){
+                    this.setstatus(false);
+                    alert('Turn off!');
+                } else {
+                    this.setstatus(true) ;
+                    alert('Turn on!');
+                }
             }
 
         }
 
-        let nokia = new mobile('nokia', '100', "", "", "");
-        let iphone = new mobile('iphone', '100', "", "", "");
+        let nokia = new mobile('nokia', '100', "", "", "",true);
+        let iphone = new mobile('iphone', '100', "", "", "",true);
 
         function Charge1() {
             if (nokia.getbattery() < 100) {
@@ -131,6 +150,12 @@
                 iphone.setbattery(iphone.getbattery() + 5);
                 display();
             }
+        }
+        function onoff1(){
+            nokia.onoff(nokia.getstatus())
+        }
+        function onoff2(){
+            iphone.onoff(iphone.getstatus())
         }
 
         function display() {
@@ -147,12 +172,10 @@
         display();
 
         function send1() {
-            let check = nokia.nobattery(nokia.getbattery());
-            console.log(check);
-            if (check === true) {
+            if (nokia.getstatus() === true) {
                 send = document.getElementById('send1').value;
                 console.log(send);
-                nokia.setbattery(nokia.getbattery() - 5);
+                nokia.use();
                 nokia.setsend(send);
                 nokia.setsent(nokia.getsend());
                 iphone.setreceive(nokia.getsend());
@@ -162,11 +185,10 @@
         }
 
         function send2() {
-            let check = iphone.nobattery(iphone.getbattery());
-            if (check !== false) {
+            if (iphone.getstatus() !== false) {
                 send = document.getElementById('send2').value;
                 console.log(send);
-                iphone.setbattery(iphone.getbattery() - 5);
+                iphone.use();
                 iphone.setsend(send);
                 iphone.setsent(iphone.getsend());
                 nokia.setreceive(iphone.getsend());
