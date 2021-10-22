@@ -91,52 +91,50 @@
                 this.sent = value;
             }
 
-            constructor(name, battery, send, receive, sent,status) {
+            constructor(name, battery, send, receive, sent, status) {
                 this.name = name;
                 this.battery = battery;
                 this.send = send;
                 this.receive = receive;
                 this.sent = sent;
-                this.status=status;
+                this.status = status;
             }
 
             use() {
-                this.setbattery(this.getbattery()-5) ;
+                this.setbattery(this.getbattery() - 5);
             }
 
             nobattery() {
 
                 if (this.getbattery() < 4) {
-                    this.setstatus(false) ;
-                } else {
-                    this.setstatus(true) ;
+                    this.setstatus(false);
                 }
             }
 
             checkon() {
-                if(this.getbattery() > 0) {
+                if (this.getbattery() > 0) {
                     this.setstatus(true);
                 }
             }
 
             charge() {
-               this.setbattery(this.getbattery()+5);
+                this.setbattery(this.getbattery() + 5);
             }
 
-            onoff(){
-                if(this.getstatus()===true){
+            onoff() {
+                if (this.getstatus() === true) {
                     this.setstatus(false);
                     alert('Turn off!');
                 } else {
-                    this.setstatus(true) ;
+                    this.setstatus(true);
                     alert('Turn on!');
                 }
             }
 
         }
 
-        let nokia = new mobile('nokia', '100', "", "", "",true);
-        let iphone = new mobile('iphone', '100', "", "", "",true);
+        let nokia = new mobile('nokia', '100', "", "", "", true);
+        let iphone = new mobile('iphone', '100', "", "", "", true);
 
         function Charge1() {
             if (nokia.getbattery() < 100) {
@@ -151,10 +149,12 @@
                 display();
             }
         }
-        function onoff1(){
+
+        function onoff1() {
             nokia.onoff(nokia.getstatus())
         }
-        function onoff2(){
+
+        function onoff2() {
             iphone.onoff(iphone.getstatus())
         }
 
@@ -172,11 +172,10 @@
         display();
 
         function send1() {
+            nokia.nobattery();
             if (nokia.getstatus() === true) {
-                send = document.getElementById('send1').value;
-                console.log(send);
                 nokia.use();
-                nokia.setsend(send);
+                nokia.setsend(document.getElementById('send1').value);
                 nokia.setsent(nokia.getsend());
                 iphone.setreceive(nokia.getsend());
                 nokia.setsend(' ');
@@ -185,11 +184,10 @@
         }
 
         function send2() {
+            nokia.nobattery();
             if (iphone.getstatus() !== false) {
-                send = document.getElementById('send2').value;
-                console.log(send);
                 iphone.use();
-                iphone.setsend(send);
+                iphone.setsend(document.getElementById('send2').value);
                 iphone.setsent(iphone.getsend());
                 nokia.setreceive(iphone.getsend());
                 iphone.setsend(' ');
