@@ -1,10 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title> Xây dựng lớp mô tả điện thoại</title>
 </head>
 <body>
-$END$
+<div>
+    <h2 id="Mobile1">Nokia</h2>
+    <p id="Battery1">Battery</p>
+    <input type="button" value="Charge" onclick="Charge1()">
+    <label>Tin nhắn</label><br>
+    <input type="text" id="send1"><br>
+    <input type="button" value="Send" onclick="send1()"><br>
+    <label>Tin nhắn đã gửi</label><br>
+    <textarea type="text" id="sent1"> </textarea><br>
+    <label>Tin nhắn đã nhận</label><BR>
+    <textarea type="text" id="receive1"></textarea><br>
+</div>
+<hr>
+<div>
+    <h2 id="Mobile">Iphone</h2>
+    <p id="Battery2">Battery</p>
+    <input type="button" value="Charge" onclick="Charge2()">
+    <label>Tin nhắn</label><br>
+    <input type="text" id="send2"><br>
+    <input type="button" value="Send" onclick="send2()"><br>
+    <label>Tin nhắn đã gửi</label><br>
+    <textarea type="text" id="sent2"> </textarea><br>
+    <label>Tin nhắn đã nhận</label><BR>
+    <textarea type="text" id="receive2"></textarea><br>
+</div>
+<div>
+    <script>
+        class mobile {
+            name;
+            battery;
+            send;
+            receive;
+            sent;
+
+            getname() {
+                return this.name;
+            }
+
+            setname(value) {
+                this.name = value;
+            }
+
+            getbattery() {
+                return this.battery;
+            }
+
+            setbattery(value) {
+                this.battery = value;
+            }
+
+            getsend() {
+                return this.send;
+            }
+
+            setsend(value) {
+                this.send = value;
+            }
+
+            getreceive() {
+                return this.receive;
+            }
+
+            setreceive(value) {
+                this.receive = value;
+            }
+
+            getsent() {
+                return this.sent;
+            }
+
+            setsent(value) {
+                this.sent = value;
+            }
+
+            constructor(name, battery, send, receive, sent) {
+                this.name = name;
+                this.battery = battery;
+                this.send = send;
+                this.receive = receive;
+                this.sent = sent;
+            }
+
+            use(battery) {
+                battery -= 5;
+                return battery;
+            }
+
+            nobattery(battery) {
+                if (battery === 0) {
+                    check = false;
+                    return check;
+                }
+            }
+
+            checkon(battery) {
+                if (battery > 0) {
+                    let check = true;
+                    return check;
+                }
+            }
+
+            charge(battery) {
+                battery += 5;
+            }
+
+        }
+
+        let nokia = new mobile('nokia', '100', "", "", "");
+        let iphone = new mobile('iphone', '100', "", "", "");
+
+        function Charge1() {
+            if (nokia.getbattery() < 100) {
+                nokia.setbattery(nokia.getbattery() + 5);
+                display();
+            }
+        }
+
+        function Charge2() {
+            if (iphone.getbattery() < 100) {
+                iphone.setbattery(nokia.getbattery() + 5);
+                display();
+            }
+        }
+
+        function display() {
+            document.getElementById('send1').innerText = nokia.getsend();
+            document.getElementById('sent1').innerText = nokia.getsent();
+            document.getElementById('receive2').innerText = iphone.getreceive();
+            document.getElementById('send2').innerText = iphone.getsend();
+            document.getElementById('sent2').innerText = iphone.getsent();
+            document.getElementById('receive1').innerText = nokia.getreceive();
+            document.getElementById('Battery1').innerText = nokia.getbattery();
+            document.getElementById('Battery2').innerText = nokia.getbattery();
+        }
+
+        display();
+
+        function send1() {
+            send = document.getElementById('send1').value;
+            console.log(send);
+            nokia.setbattery(nokia.getbattery() - 5);
+            nokia.setsend(send);
+            nokia.setsent(nokia.getsend());
+            iphone.setreceive(nokia.getsend());
+            nokia.setsend('');
+            display();
+        }
+
+        function send2() {
+            send = document.getElementById('send2').value;
+            console.log(send);
+            iphone.setbattery(iphone.getbattery() - 5);
+            iphone.setsend(send);
+            iphone.setsent(iphone.getsend());
+            nokia.setreceive(iphone.getsend());
+            iphone.setsend('');
+            display();
+        }
+    </script>
+</div>
 </body>
 </html>
