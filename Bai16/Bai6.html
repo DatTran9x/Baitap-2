@@ -141,7 +141,7 @@
             document.getElementById('sent2').innerText = iphone.getsent();
             document.getElementById('receive1').innerText = nokia.getreceive();
             document.getElementById('Battery1').innerText = nokia.getbattery();
-            document.getElementById('Battery2').innerText = nokia.getbattery();
+            document.getElementById('Battery2').innerText = iphone.getbattery();
         }
 
         display();
@@ -156,7 +156,7 @@
                 nokia.setsend(send);
                 nokia.setsent(nokia.getsend());
                 iphone.setreceive(nokia.getsend());
-                nokia.setsend('');
+                nokia.setsend(' ');
                 display();
             }
         }
@@ -170,7 +170,7 @@
                 iphone.setsend(send);
                 iphone.setsent(iphone.getsend());
                 nokia.setreceive(iphone.getsend());
-                iphone.setsend('');
+                iphone.setsend(' ');
                 display();
             }
         }
