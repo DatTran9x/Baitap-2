@@ -7,22 +7,22 @@
 <body>
 <div>
     <script>
-        function Temprature(temp) {
-            this.getfara = function () {
-                return temp * 9 / 5 + 32;
+            function Temprature(temp) {
+                this.getfara = function () {
+                    return temp * 9 / 5 + 32;
+                }
+                this.getkevin = function () {
+                    return temp + 273;
+                }
             }
-            this.getkevin = function () {
-                return temp + 273;
-            }
-        }
 
-        let temp = +prompt('Độ C: ');
-        document.write('Độ C:' + temp + '<br>');
-        temp = new Temprature(temp);
-        let fara = temp.getfara();
-        let kevin = temp.getkevin();
-        document.write('Độ F:' + fara + '<br>');
-        document.write('Độ K:' + kevin);
+            let temp = +prompt('Độ C: ');
+            document.write('Độ C:' + temp + '<br>');
+            temp = new Temprature(temp);
+            let fara = temp.getfara();
+            let kevin = temp.getkevin();
+            document.write('Độ F:' + fara + '<br>');
+            document.write('Độ K:' + kevin);
 
     </script>
 </div>

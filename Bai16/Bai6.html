@@ -93,15 +93,19 @@
             }
 
             nobattery(battery) {
-                if (battery === 0) {
+                let check;
+                if (battery < 4) {
                     check = false;
+                    return check;
+                } else {
+                    check = true;
                     return check;
                 }
             }
 
             checkon(battery) {
                 if (battery > 0) {
-                    let check = true;
+                    check = true;
                     return check;
                 }
             }
@@ -124,7 +128,7 @@
 
         function Charge2() {
             if (iphone.getbattery() < 100) {
-                iphone.setbattery(nokia.getbattery() + 5);
+                iphone.setbattery(iphone.getbattery() + 5);
                 display();
             }
         }
@@ -143,25 +147,32 @@
         display();
 
         function send1() {
-            send = document.getElementById('send1').value;
-            console.log(send);
-            nokia.setbattery(nokia.getbattery() - 5);
-            nokia.setsend(send);
-            nokia.setsent(nokia.getsend());
-            iphone.setreceive(nokia.getsend());
-            nokia.setsend('');
-            display();
+            let check = nokia.nobattery(nokia.getbattery());
+            console.log(check);
+            if (check === true) {
+                send = document.getElementById('send1').value;
+                console.log(send);
+                nokia.setbattery(nokia.getbattery() - 5);
+                nokia.setsend(send);
+                nokia.setsent(nokia.getsend());
+                iphone.setreceive(nokia.getsend());
+                nokia.setsend('');
+                display();
+            }
         }
 
         function send2() {
-            send = document.getElementById('send2').value;
-            console.log(send);
-            iphone.setbattery(iphone.getbattery() - 5);
-            iphone.setsend(send);
-            iphone.setsent(iphone.getsend());
-            nokia.setreceive(iphone.getsend());
-            iphone.setsend('');
-            display();
+            let check = iphone.nobattery(iphone.getbattery());
+            if (check !== false) {
+                send = document.getElementById('send2').value;
+                console.log(send);
+                iphone.setbattery(iphone.getbattery() - 5);
+                iphone.setsend(send);
+                iphone.setsent(iphone.getsend());
+                nokia.setreceive(iphone.getsend());
+                iphone.setsend('');
+                display();
+            }
         }
     </script>
 </div>
