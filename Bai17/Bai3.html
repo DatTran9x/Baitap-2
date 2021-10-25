@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amdam and Eva</title>
+</head>
+<body>
+<script>
+    class apple {
+        weight;
+
+        getweight() {
+            return this._weight;
+        }
+
+        setweight(value) {
+            this._weight = value;
+        }
+
+        constructor(weight) {
+            this._weight = weight;
+        }
+
+        descease() {
+            this.setweight(this.getweight() - 1);
+        }
+
+        isEmpty() {
+        }
+    }
+
+    class human {
+        _name;
+        _gender;
+        _weight;
+
+        constructor(name, gender, weight) {
+            this._name = name;
+            this._gender = gender;
+            this._weight = weight;
+        }
+
+        getname() {
+            return this._name;
+        }
+
+        setname(value) {
+            this._name = value;
+        }
+
+        getgender() {
+            return this._gender;
+        }
+
+        setgender(value) {
+            this._gender = value;
+        }
+
+        getweight() {
+            return this._weight;
+        }
+
+        setweight(value) {
+            this._weight = value;
+        }
+
+        say() {
+            console.log('Hello my dear');
+        }
+
+        checkapple(apple) {
+            console.log(apple);
+        }
+
+        eat(apple) {
+            if (apple.getweight() > 0) {
+                apple.descease();
+            }
+        }
+    }
+
+    let apple1 = new apple(10);
+
+    let adam =new human("adam","male",67);
+    let eva = new human("eva","female",47);
+    for (let i = 1; i <= apple1.getweight(); i++) {
+        adam.say();
+        adam.checkapple(apple1);
+        adam.eat(apple1);
+        eva.say();
+        eva.checkapple(apple1);
+        eva.eat(apple1);
+    }
+</script>
+</body>
+</html>
