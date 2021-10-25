@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+    class lamp{
+        getstatus() {
+            return this.status;
+        }
+
+        setstatus(value) {
+            this.status = value;
+        }
+        constructor(status) {
+            this.status = status;
+        }
+        status;
+        turnon(){
+            this.setstatus(true);
+        }
+        turnoff(){
+            this.setstatus(false);
+        }
+    }
+
+    class Switch{
+        getstatus() {
+            return this.status;
+        }
+
+        setstatus(value) {
+            this.status = value;
+        }
+        constructor(status) {
+            this.status = status;
+        }
+        status;
+
+        connectToLamp(lamp){
+            lamp.setstatus(this.getstatus());
+        }
+
+        switchon(lamp){
+            lamp.turnon();
+            this.setstatus(true);
+        }
+        switchoff(lamp){
+            lamp.turnoff();
+            this.setstatus(false);
+        }
+    }
+
+    let Lamp1 = new lamp(false);
+    let switch1 = new Switch(false);
+    console.log(switch1.connectToLamp(Lamp1));
+    console.log(switch1.switchon(Lamp1));
+    console.log(Lamp1);
+    console.log(switch1);
+</script>
+</body>
+</html>
