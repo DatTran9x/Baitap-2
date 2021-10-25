@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<div>
+    <label for="number"> Type a number</label>
+    <input type="number" id="number"><br>
+    <input type="button" onclick="calculate()" value="calculate">
+</div>
+<script>
+    function calculate() {
+        let num = +document.getElementById('number').value;
+        let result = [];
+        if (num < 2) {
+            check = false;
+            document.write('No integer');
+        } else {
+            for (let i = 2; i <= num; i++) {
+                let check = true;
+
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) {
+                        check = false;
+                        break;
+                    }
+                }
+                if (check) {
+                    result.push(i);
+                }
+            }
+            document.write(result);
+        }
+    }
+</script>
+</body>
+</html>

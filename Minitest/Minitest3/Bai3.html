@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let today = new Date();
+    let date = today.getFullYear();
+    let birthYear = +prompt('Nhập năm sinh : ');
+    if (birthYear > date) {
+        alert('Không hợp lệ');
+    } else {
+        let result = date - birthYear;
+        alert('Bạn năm nay ' + result + ' tuổi!');
+    }
+</script>
+</body>
+</html>

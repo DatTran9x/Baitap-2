@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script>
+    let length = +prompt(" Nhập số phần tử mảng: ");
+    if (length===0){
+        alert('Vui lòng nhập lại!');
+        
+    }
+    let arr = new Array(length);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt('Nhập phần tử');
+    }
+    document.write("Mảng là : " + arr + '<br>');
+
+    function sumOdd(arr) {
+        let result = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+                result += arr[i];
+            }
+        }
+        return result;
+    }
+
+    document.write('Tổng của mảng là : ' + sumOdd(arr))
+</script>
+</body>
+</html>
