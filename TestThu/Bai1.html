@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    let scores = [2, 6, 8, 7, 9, 10];
+    document.write('Mảng là :' + scores + "<br>")
+
+    function sort(scores) {
+        for (let i = 0; i < scores.length; i++) {
+            for (let j = i + 1; j < scores.length; j++) {
+                let transfer = scores[i];
+                if (scores[i] < scores[j]) {
+                    scores[i] = scores[j];
+                    scores[j] = transfer;
+                }
+            }
+        }
+        return scores;
+    }
+
+    scores = sort(scores);
+    document.write('Số lớn thứ 3 là : ' + scores[2]);
+</script>
+</body>
+</html>

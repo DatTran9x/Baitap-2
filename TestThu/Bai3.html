@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    let string1 = "Hello";
+    let string2 = "Hello World!";
+    document.write('Chuỗi 1 là : ' + string1 + "<br>");
+    document.write('CHuỗi 2 là : ' + string2 + "<br>");
+    let array1 = string1.split("");
+    let array2 = string2.split("");
+
+    function check(array1, array2) {
+        let status = false;
+        for (let i = 0; i < array2.length; i++) {
+            if (array2[i] === array1[0]) {
+                for (let j = 0; j < array1.length; j++) {
+                    if (array1[j] === array2[i + j]) {
+                        status = true;
+                    } else {
+                        status = false;
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        return status;
+    }
+
+    let status = check(array1, array2);
+    document.write(status);
+</script>
+</body>
+</html>
