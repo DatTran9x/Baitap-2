@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<canvas id="MyCanvas"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this._x = x;
+            this._y = y;
+            this._width = width;
+            this._height = height;
+            this._color = color;
+        }
+
+        render(canvas) {
+            let ctx = canvas.getContext('2d');
+            ctx.fillStyle = this._color;
+            ctx.fillRect(this._x, this._y, this._width, this._height);
+        }
+    }
+
+    let square = new Rectangle(10, 10, 200, 100, "#000000");
+    let canvas = document.getElementById('MyCanvas')
+    square.render(canvas);
+</script>
+</body>
+</html>

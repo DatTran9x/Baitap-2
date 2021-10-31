@@ -47,17 +47,13 @@ function start() {
 }
 
 function game() {
-    let isAlive = setInterval(run, 1);
+    setInterval(run, 1);
 }
-
 
 function run() {
     if (status === true) {
         let sonTop = parseInt(window.getComputedStyle(son).getPropertyValue("top"));
         let JumboLeft = parseInt(window.getComputedStyle(Jumbo).getPropertyValue('left'));
-        if (JumboLeft === 919) {
-            count++
-        }
         if (JumboLeft < 180 && JumboLeft > 40 && sonTop >= 230) {
             gameOver();
         } else {

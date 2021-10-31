@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Who is Millionaire</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        #wrapper {
+            border: 1px solid black;
+            width: 500px;
+            height: 600px;
+        }
+        .hide {
+            display: none;
+        }
+        .logo {
+            display: block;
+            margin: 30px auto;
+        }
+        #startBtn {
+            border: none;
+            padding: 10px 30px;
+            border-radius: 3px;
+            display: block;
+            margin: 100px auto;
+        }
+        #question {
+            margin-top: 100px;
+            width: 80%;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid whitesmoke;
+            margin: 100px auto 50px auto;
+            padding: 10px 5px;
+            background-color: #040404;
+            color: white;
+
+        }
+        #answers {
+            width: 80%;
+            margin: 100px auto 20px auto;
+        }
+        #answers >div {
+            border: 1px solid green;
+            text-align: center;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            padding: 5px;
+            background-color: #040404;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+<div id="welcomeScreen" class="hide">
+    <img class ="logo" src="logo.jpg"/>
+    <button id="startBtn"> Start</button>
+</div>
+    <div id="questionScreen" class="hide"> Question</div>
+    <img class ="logo" src="logo.jpg"/>
+    <div id="question"> Câu hỏi</div>
+    <div id="answers">
+    <div id="answer_1"> Câu trả lời 1</div>
+    <div id="answer_2" > Câu trả lời 2</div>
+    <div id="answer_3"> Câu trả lời 3</div>
+    <div id="answer_4"> Câu trả lời 4</div>
+    </div>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" scr="ui.js"></script>
+</html>
