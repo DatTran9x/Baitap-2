@@ -5,30 +5,59 @@
     <title>Bai 2</title>
 </head>
 <body>
-<label for="number">Nhập số cần tìm</label>
-<input type="number" id="number">
-<input type="button" onclick="check()" value="Check">
 <script>
+    // Phần 1:
+    function check() {
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let num = 5;
+        run(arr, num);
+    }
+
     function run(arr, num) {
         let check = false;
+        let index
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] === num) {
                 check = true;
+                index = i + 1;
                 break;
             }
         }
         if (check) {
-            alert('Số cần tìm có trong mảng');
+            alert('Số cần tìm tại vị trí ' + index)
         } else {
-            alert('Số cần tìm không có trong mảng');
+            alert("Số cần tìm không tồn tại trong mảng");
         }
     }
 
-    function check() {
-        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let num = +document.getElementById('number').value;
-        run(arr, num);
-    }
+    check();
 </script>
+
+<!--   Phần 2-->
+<!--<label for="number">Nhập số cần tìm</label>-->
+<!--<input type="number" id="number">-->
+<!--<input type="button" onclick="check()" value="Check">-->
+<!--<script>-->
+<!--   function run(arr, num) {-->
+<!--         let check = false;-->
+<!--         for (let i = 0; i < arr.length; i++) {-->
+<!--             if (arr[i] === num) {-->
+<!--                 check = true;-->
+<!--                 break;-->
+<!--             }-->
+<!--         }-->
+<!--         if (check) {-->
+<!--             alert('Số cần tìm có trong mảng');-->
+<!--         } else {-->
+<!--             alert('Số cần tìm không có trong mảng');-->
+<!--         }-->
+<!--     }-->
+<!--    -->
+<!--     function check() {-->
+<!--         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];-->
+<!--         let num = +document.getElementById('number').value;-->
+<!--         run(arr, num);-->
+<!--     }-->
+<!--</script>-->
 </body>
 </html>
