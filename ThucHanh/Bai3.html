@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<label for="string">Nhập chuỗi</label>
+<input type="text" id="string">
+<input type="button" onclick="check()" value="Check">
+<script>
+    function count(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            switch (arr[i]) {
+                case "a":
+                case "o":
+                case "e":
+                case 'u':
+                case 'i':
+                    count++;
+                    break;
+            }
+        }
+        if (count === 0) {
+            alert("False");
+        } else {
+            alert("Số kí tự nguyên âm là: " + count);
+        }
+    }
+
+    function check() {
+        let arr = document.getElementById("string").value;
+        console.log(arr);
+        count(arr);
+    }
+</script>
+</body>
+</html>

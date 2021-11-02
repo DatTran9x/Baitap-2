@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    let a = 5;
+    let b = 8;
+
+    function resolve(a, b) {
+        if (a === 0 && b === 0) {
+            alert('Phương trình có vô số nghiệm');
+        }
+        if (a === 0 && b !== 0) {
+            alert('Phương trình vô nghiệm');
+        }
+        if (a !== 0) {
+            alert("Phương trình có nghiệm là : " + (-b / a));
+        }
+    }
+
+    resolve(a, b);
+</script>
+</body>
+</html>
